@@ -1,0 +1,7 @@
+name: Repeat
+main: com.codisimus.plugins.repeat.Repeat
+version: 0.1.0
+author: Codisimus
+website: www.codisimus.com
+description: Repeats last command sent
+startup: postworld
