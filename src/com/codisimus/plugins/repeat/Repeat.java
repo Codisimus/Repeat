@@ -33,7 +33,7 @@ public class Repeat extends JavaPlugin {
     public void onEnable () {
         server = getServer();
         pm = server.getPluginManager();
-        pm.registerEvent(Type.PLAYER_COMMAND_PREPROCESS, new commandListener(), Priority.Normal, this);
+        pm.registerEvent(Type.PLAYER_COMMAND_PREPROCESS, new commandListener(), Priority.Highest, this);
         System.out.println("Repeat "+this.getDescription().getVersion()+" is enabled!");
     }
 }
