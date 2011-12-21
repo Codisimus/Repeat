@@ -1,6 +1,6 @@
 name: Repeat
 main: com.codisimus.plugins.repeat.Repeat
-version: 0.1.1
+version: 0.2.1
 author: Codisimus
 website: www.codisimus.com
 description: Repeats last command sent

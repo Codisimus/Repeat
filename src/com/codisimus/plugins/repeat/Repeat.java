@@ -1,6 +1,6 @@
 package com.codisimus.plugins.repeat;
 
-import com.codisimus.plugins.repeat.listeners.commandListener;
+import com.codisimus.plugins.repeat.listeners.CommandListener;
 import org.bukkit.Server;
 import org.bukkit.event.Event.Priority;
 import org.bukkit.event.Event.Type;
@@ -26,14 +26,14 @@ public class Repeat extends JavaPlugin {
     }
 
     /**
-     * Registers the commandListener
+     * Registers the CommandListener
      * 
      */
     @Override
     public void onEnable () {
         server = getServer();
         pm = server.getPluginManager();
-        pm.registerEvent(Type.PLAYER_COMMAND_PREPROCESS, new commandListener(), Priority.Highest, this);
+        pm.registerEvent(Type.PLAYER_COMMAND_PREPROCESS, new CommandListener(), Priority.Highest, this);
         System.out.println("Repeat "+this.getDescription().getVersion()+" is enabled!");
     }
 }

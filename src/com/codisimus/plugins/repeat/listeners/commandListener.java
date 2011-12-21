@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerListener;
  *
  * @author Codisimus
  */
-public class commandListener extends PlayerListener {
+public class CommandListener extends PlayerListener {
     public static Properties memory = new Properties();
 
     /**
@@ -43,7 +43,11 @@ public class commandListener extends PlayerListener {
                 
                 //Dispatch commands replacing the 2nd word with every word that follows
                 for (int i = 2; i < args.length; i++) {
-                    newMsg = msg.replaceAll(args[1], args[i]);
+                    newMsg = msg.replaceFirst("/"+args[1]+" ", "/"+args[i]+" ");
+                    newMsg = newMsg.replaceAll(" "+args[1]+" ", " "+args[i]+" ");
+                    if (newMsg.endsWith(" "+args[1]))
+                        newMsg = newMsg.substring(0, newMsg.length() - args[1].length()).concat(args[i]);
+                    
                     Repeat.server.dispatchCommand(player, newMsg);
                 }
                 
